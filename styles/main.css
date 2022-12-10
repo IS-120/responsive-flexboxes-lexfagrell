@@ -100,41 +100,61 @@ a[href]:hover {
   object-fit: cover;
 }
 
-.hero h1 {
+.title {
   font-size: clamp(10rem, -0.875rem + 8.333333vw, 20rem);
   text-shadow: 2px 2px #000;
   font-weight: bold;
   font-family: "Bebas Neue";
   margin-top: 299px;
 }
-
 .hero-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   inset: 0 0 0 0;
   background-color: rgba(0, 0, 0, 0.3);
 }
-.cards {
-  display: flex;
-  gap: 3rem;
-  width: 75%;
-  margin: auto;
+.title {
+  height: 20%;
+  font-size: 12vw !important;
+  margin: 0 !important;
+  padding: 0;
+}
+.subtitle {
+  font-size: 2vw !important;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  width: 480px;
+  max-width: 480px;
   height: fit-content;
   border-radius: 5px;
   margin: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   transition: box-shadow 500ms ease;
 }
-
 .card:hover {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
   cursor: pointer;
 }
+.cards {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: auto;
+}
+.group {
+  gap: 3rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .inner-text {
   flex-direction: row;
   width: 100%;
@@ -150,27 +170,28 @@ a[href]:hover {
 .page {
   text-decoration: none;
   color: white;
-  padding: 100px;
   font-size: larger;
   font-weight: bold;
   font-family: "Bebas Neue";
+  width: 100%;
 }
 .page[href]:hover {
   text-decoration: underline;
   color: var(--color-highlight-light);
 }
-
-ul {
+.max {
+  width: 100%;
+}
+.menu {
   list-style: none;
   background-color: #556b2f;
   display: flex;
   margin: 0;
   justify-content: space-between;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-size: 30px;
-  padding: 1.5rem;
+  padding: 1.5rem 3rem;
 }
-
 .lunch {
   text-align: center;
   background-color: #4987e8;
@@ -179,14 +200,26 @@ ul {
   text-shadow: 2px 2px #000;
   letter-spacing: 5px;
   font-family: "Bebas Neue";
-  margin: 100px;
   padding: 1rem;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 401px) {
-  /* tablet CSS */
+  .group {
+    flex-direction: row;
+  }
 }
 
 @media (min-width: 801px) {
-  /* desktop CSS */
+  .cards {
+    flex-direction: row;
+    gap: 3rem;
+    width: 75%;
+    margin: auto;
+  }
+  .group {
+    flex-direction: row;
+  }
 }
